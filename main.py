@@ -6,6 +6,8 @@ from constants import *
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0  # delta time
 
     # game loop
     while True:
@@ -16,6 +18,7 @@ def main():
         
         screen.fill((0, 0, 0))  # set screen color black
         pygame.display.flip()  # refreshes the screen
+        dt = clock.tick(60) / 1000
 
     # temporary text on screen
     print("Starting asteroids!")
