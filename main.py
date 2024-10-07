@@ -1,6 +1,7 @@
 import pygame
 
 from constants import *
+from player import *
 
 
 def main():
@@ -8,6 +9,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0  # delta time
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
 
     # game loop
     while True:
@@ -17,7 +19,8 @@ def main():
                 return
         
         screen.fill((0, 0, 0))  # set screen color black
-        pygame.display.flip()  # refreshes the screen
+        player.draw(screen)
+        pygame.display.flip()  # refresh the screen
         dt = clock.tick(60) / 1000
 
     # temporary text on screen
