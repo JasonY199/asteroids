@@ -55,7 +55,7 @@ def main():
             for shot in shots:
                 if a.detect_collision(shot):
                     shot.kill()
-                    a.kill()
+                    a.split()
 
         pygame.display.flip()  # refresh the screen
         dt = clock.tick(60) / 1000  # convert to seconds
