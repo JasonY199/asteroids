@@ -51,6 +51,11 @@ def main():
             if player.detect_collision(a):
                 print("Game over!")
                 return  # quit game
+            
+            for shot in shots:
+                if a.detect_collision(shot):
+                    shot.kill()
+                    a.kill()
 
         pygame.display.flip()  # refresh the screen
         dt = clock.tick(60) / 1000  # convert to seconds
