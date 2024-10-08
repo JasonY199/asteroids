@@ -16,21 +16,23 @@ def main():
     clock = pygame.time.Clock()
     dt = 0  # delta time
 
-    # groups
+    # initialize groups
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
     # add classes to groups
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (shots, updatable, drawable)
 
     # create objects
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
     asteroid_field = AsteroidField()
 
-    # game loop
+    # start game loop
     while True:
         # allow user to close or quit the game
         for event in pygame.event.get():
