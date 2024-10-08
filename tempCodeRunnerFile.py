@@ -1,1 +1,1 @@
-self.rotation = 0
+player = 
