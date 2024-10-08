@@ -45,8 +45,10 @@ def main():
         for d in drawable:
             d.draw(screen)
         
-        #for a in asteroids:
-        #    a.update(dt)
+        for a in asteroids:
+            if player.detect_collision(a):
+                print("Game over!")
+                return  # quit game
 
         pygame.display.flip()  # refresh the screen
         dt = clock.tick(60) / 1000  # convert to seconds
